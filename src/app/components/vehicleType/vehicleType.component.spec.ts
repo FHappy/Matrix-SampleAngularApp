@@ -6,35 +6,19 @@ import { Observable } from 'rxjs/Observable';
 
 import { AppStateActions } from '../../actionHandlers/appState.actions';
 import { APP_STORES } from '../../app.stores';
+import { MockActivatedRoute } from '../../mocks/mock.activatedRoute';
+import { MockAppStateActions } from '../../mocks/mock.appState.actions';
+import { MockRouter } from '../../mocks/mock.router';
 import { VehicleTypeComponent } from './vehicleType.component';
 
 describe('VehicleTypeComponent', () => {
   let component: VehicleTypeComponent;
   let fixture: ComponentFixture<VehicleTypeComponent>;
   let _appStateActions: AppStateActions;
-  let _route: ActivatedRoute;
+  let _route: MockActivatedRoute;
   let _router: Router;
   let _store: any;
   let debugEl: DebugElement;
-
-  class MockAppStateActions {
-    public updateState(stateChanges): void {
-
-    }
-  }
-
-  class MockActivatedRoute extends ActivatedRoute {
-    constructor() {
-      super();
-      this.params = Observable.of({ id: 'S' });
-    }
-  }
-
-  class MockRouter {
-    public navigate(commands: any[]): void {
-
-    }
-  }
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -61,6 +45,8 @@ describe('VehicleTypeComponent', () => {
     _route = TestBed.get(ActivatedRoute);
     _router = TestBed.get(Router);
     debugEl = fixture.debugElement;
+
+    _route.testParams = { id: 'S'};
     fixture.detectChanges();
   });
 
