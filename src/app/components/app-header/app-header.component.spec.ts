@@ -6,6 +6,7 @@ import { Store, StoreModule } from '@ngrx/store';
 import { AppStateActions } from '../../actionHandlers/appState.actions';
 import { APP_STORES } from '../../app.stores';
 import { MockAppStateActions } from '../../mocks/mock.appState.actions';
+import { MockRouter } from '../../mocks/mock.router';
 import { AppHeaderComponent } from './app-header.component';
 
 describe('AppHeaderComponent', () => {
@@ -15,12 +16,6 @@ describe('AppHeaderComponent', () => {
   let _router: Router;
   let _appStateActions: AppStateActions;
   let _store: any;
-
-  class MockRouter {
-    public navigate(commands: any[]): void {
-
-    }
-  }
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
