@@ -2,6 +2,7 @@ import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AppStateActions } from '../../actionHandlers/appState.actions';
+import { MockAppStateActions } from '../../mocks/mock.appState.actions';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -9,12 +10,6 @@ describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let debugEl: DebugElement;
   let _appStateActions: AppStateActions;
-
-  class MockAppStateActions {
-    public initializeApp(): void {
-
-    }
-  }
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

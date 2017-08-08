@@ -5,6 +5,7 @@ import { Store, StoreModule } from '@ngrx/store';
 
 import { AppStateActions } from '../../actionHandlers/appState.actions';
 import { APP_STORES } from '../../app.stores';
+import { MockAppStateActions } from '../../mocks/mock.appState.actions';
 import { AppHeaderComponent } from './app-header.component';
 
 describe('AppHeaderComponent', () => {
@@ -17,12 +18,6 @@ describe('AppHeaderComponent', () => {
 
   class MockRouter {
     public navigate(commands: any[]): void {
-
-    }
-  }
-
-  class MockAppStateActions {
-    public updateState(stateChanges): void {
 
     }
   }

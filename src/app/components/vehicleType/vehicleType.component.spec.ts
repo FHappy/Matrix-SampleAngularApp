@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import { AppStateActions } from '../../actionHandlers/appState.actions';
 import { APP_STORES } from '../../app.stores';
 import { MockActivatedRoute } from '../../mocks/mock.activatedRoute';
+import { MockAppStateActions } from '../../mocks/mock.appState.actions';
 import { VehicleTypeComponent } from './vehicleType.component';
 
 describe('VehicleTypeComponent', () => {
@@ -17,12 +18,6 @@ describe('VehicleTypeComponent', () => {
   let _router: Router;
   let _store: any;
   let debugEl: DebugElement;
-
-  class MockAppStateActions {
-    public updateState(stateChanges): void {
-
-    }
-  }
 
   class MockRouter {
     public navigate(commands: any[]): void {
