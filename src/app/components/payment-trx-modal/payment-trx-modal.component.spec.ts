@@ -8,6 +8,8 @@ import { NotificationActions } from '../../actionHandlers/notification.actions';
 import { UserActions } from '../../actionHandlers/user.actions';
 import { APP_STORES } from '../../app.stores';
 import { MockAppStateActions } from '../../mocks/mock.appState.actions';
+import { MockNotificationActions } from '../../mocks/mock.notification.actions';
+import { MockUserActions } from '../../mocks/mock.user.actions';
 import { PaymentTrxModalComponent } from './payment-trx-modal.component';
 
 describe('PaymentTrxModalComponent', () => {
@@ -17,18 +19,6 @@ describe('PaymentTrxModalComponent', () => {
   let _notificationActions: NotificationActions;
   let _appStateActions: AppStateActions;
   let _userActions: UserActions;
-
-  class MockUserActions {
-    public processPaymentTrx(paymentReq): void {
-
-    }
-  }
-
-  class MockNotificationActions {
-    public notifyError({ type, title, message }: { type: string, title: string, message: string }): void {
-
-    }
-  }
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
