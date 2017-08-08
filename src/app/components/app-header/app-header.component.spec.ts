@@ -3,8 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { Store, StoreModule } from '@ngrx/store';
 
-import { APP_STORES } from '../../app.stores';
 import { AppStateActions } from '../../actionHandlers/appState.actions';
+import { APP_STORES } from '../../app.stores';
 import { AppHeaderComponent } from './app-header.component';
 
 describe('AppHeaderComponent', () => {
@@ -44,6 +44,7 @@ describe('AppHeaderComponent', () => {
     fixture = TestBed.createComponent(AppHeaderComponent);
     _store = fixture.debugElement.injector.get(Store);
     _router = TestBed.get(Router);
+    _appStateActions = TestBed.get(AppStateActions);
     component = fixture.componentInstance;
     debugEl = fixture.debugElement;
     fixture.detectChanges();

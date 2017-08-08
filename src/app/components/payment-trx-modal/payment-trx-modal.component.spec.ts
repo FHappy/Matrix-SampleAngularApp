@@ -50,7 +50,11 @@ describe('PaymentTrxModalComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PaymentTrxModalComponent);
+    _notificationActions = TestBed.get(NotificationActions);
+    _userActions = TestBed.get(UserActions);
+    _appStateActions = TestBed.get(AppStateActions);
     component = fixture.componentInstance;
+    debugEl = fixture.debugElement;
     fixture.detectChanges();
   });
 

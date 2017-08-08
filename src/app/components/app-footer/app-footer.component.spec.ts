@@ -3,8 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Store, StoreModule } from '@ngrx/store';
 
-import { AppFooterComponent } from './app-footer.component';
 import { APP_STORES } from '../../app.stores';
+import { AppFooterComponent } from './app-footer.component';
 
 describe('AppFooterComponent', () => {
   let component: AppFooterComponent;
